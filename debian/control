@@ -1,0 +1,19 @@
+Source: libdisplaycore-driver-picadillo
+Section: libraries
+Priority: extra
+Maintainer: Matt Jenkins <matt@majenko.co.uk>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+
+Package: libdisplaycore-driver-picadillo
+Section: libraries
+Architecture: all
+XBSC-Group: DisplayCore
+XBSC-Subgroup: Drivers
+Depends: libdisplaycore-core, libdisplaycore-driver-analogtouch
+Provides: Picadillo.h
+Description: Picadillo-35T driver for DisplayCore
+ The DisplayCore driver for the Picadillo-35T board
+
+
+
