@@ -256,7 +256,7 @@ void Picadillo::setRotation(int m)
     clearClipping();
 }
 
-void Picadillo::invertDisplay(boolean i) 
+void Picadillo::invertDisplay(bool i) 
 {
 	writeCommand(i ? HX8357_INVON : HX8357_INVOFF);
 }
@@ -326,8 +326,8 @@ void Picadillo::closeWindow() {
     }
 }
 
-uint8_t Picadillo::readByte(boolean fresh) {
-    static boolean haveStoredByte = false;
+uint8_t Picadillo::readByte(bool fresh) {
+    static bool haveStoredByte = false;
     static uint8_t storedByte = 0;
     if (fresh) {
         haveStoredByte = false;
@@ -370,7 +370,7 @@ void Picadillo::getRectangle(int x, int y, int w, int h, color_t *buf) {
     }
 }
 
-uint16_t Picadillo::readData(boolean cont) {
+uint16_t Picadillo::readData(bool cont) {
     uint16_t din;
     PMADDR = 0x0001;
     if (!cont) {

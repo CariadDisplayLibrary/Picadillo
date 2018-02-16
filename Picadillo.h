@@ -54,7 +54,7 @@ class Picadillo : public DisplayCore
         void drawHorizontalLine(int x, int y, int w, color_t color);
         void fillRectangle(int x, int y, int w, int h, color_t color);
         void setRotation(int r);
-        void invertDisplay(boolean i);
+        void invertDisplay(bool i);
         void displayOn();  
         void displayOff();  
         color_t colorAt(int x, int y);
@@ -69,8 +69,8 @@ class Picadillo : public DisplayCore
 
         void writeCommand(uint16_t);
         void writeData(uint16_t);
-        uint16_t readData(boolean cont = false);
-        uint8_t readByte(boolean fresh = false);
+        uint16_t readData(bool cont = false);
+        uint8_t readByte(bool fresh = false);
 		
         void enableBacklight();
         void disableBacklight();
