@@ -161,6 +161,11 @@ boolean configureADC(float freq) {
 	IFS1bits.AD1IF = 0;
 	IEC1bits.AD1IE = 1;
 
+    setIntVector(_ADC_VECTOR, readAdc);
+    setIntPriority(_ADC_VECTOR, 6, 0);
+    clearIntFlag(_ADC_IRQ);
+    setIntEnable(_ADC_IRQ);
+
 	T3CON = 0;
 	T3CONbits.TCKPS = ps;
 	PR3 = baseclock / f;
@@ -169,16 +174,15 @@ boolean configureADC(float freq) {
 	return true;
 }
 
-extern "C" {
-	#include <sys/attribs.h>
-	void __ISR(_ADC_VECTOR, IPL6) _ADCInterrupt() {
-		static int x = 0;
-		data[x++] = abs(ADC1BUF0);
-		if (x == 320) {
-			x = 0;
-			AD1CON1bits.ON = 0;
-		}
-		IFS1bits.AD1IF = 0;
+
+void __USER_ISR readAdc() {
+	static int x = 0;
+	data[x++] = abs(ADC1BUF0);
+	if (x == 320) {
+		x = 0;
+		AD1CON1bits.ON = 0;
 	}
+    clearIntFlag(_ADC_IRQ);
+	IFS1bits.AD1IF = 0;
 }
 
