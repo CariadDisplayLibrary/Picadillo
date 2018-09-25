@@ -36,6 +36,41 @@ class Picadillo : public DisplayCore
         static const uint8_t HX8357_DISPLAYOFF                 = 0x28;
         static const uint8_t HX8357_DISPLAYON                  = 0x29;
 
+        static const uint32_t DISPLAY_HX8357                   = 0x008000;
+        static const uint32_t DISPLAY_ILI9488                  = 0x548066;
+
+        uint8_t _displayModel;
+
+        void identifyDisplay();
+
+        void initializeDevice_HX8357();
+        void setAddrWindow_HX8357(int x0, int y0, int x1, int y1);
+        void setRotation_HX8357(int m);
+        void invertDisplay_HX8357(bool i);
+        void displayOn_HX8357();
+        void displayOff_HX8357();
+        color_t colorAt_HX8357(int x, int y);
+        int getScanLine_HX8357();
+
+        void initializeDevice_ILI9488();
+        void setAddrWindow_ILI9488(int x0, int y0, int x1, int y1);
+        void setRotation_ILI9488(int m);
+        void invertDisplay_ILI9488(bool i);
+        void displayOn_ILI9488();
+        void displayOff_ILI9488();
+        color_t colorAt_ILI9488(int x, int y);
+        int getScanLine_ILI9488();
+
+
+        void (Picadillo::*_initializeDevice)();
+        void (Picadillo::*_setAddrWindow)(int x0, int y0, int x1, int y1);
+        void (Picadillo::*_setRotation)(int m);
+        void (Picadillo::*_invertDisplay)(bool i);
+        void (Picadillo::*_displayOn)();
+        void (Picadillo::*_displayOff)();
+        color_t (Picadillo::*_colorAt)(int x, int y);
+        int (Picadillo::*_getScanLine)();
+
 	public:
         static const uint8_t opWrite = 0;
         static const uint8_t opRead = 1;
