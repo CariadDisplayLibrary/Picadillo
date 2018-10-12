@@ -1,3 +1,5 @@
 Picadillo.cpp libraries/DisplayCore/Picadillo
+Picadillo_HX8357.cpp libraries/DisplayCore/Picadillo
+Picadillo_ILI9488.cpp libraries/DisplayCore/Picadillo
 Picadillo.h libraries/DisplayCore/Picadillo
 examples/ libraries/DisplayCore/Picadillo
