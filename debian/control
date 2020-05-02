@@ -1,19 +1,20 @@
-Source: libdisplaycore-driver-picadillo
+Source: libcariad-driver-picadillo
 Section: main
 Priority: extra
 Maintainer: Matt Jenkins <matt@majenko.co.uk>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.4
 
-Package: libdisplaycore-driver-picadillo
+Package: libcariad-driver-picadillo
+Replaces: libdisplaycore-driver-picadillo
 Architecture: all
-XBSC-Group: DisplayCore
+XBSC-Group: Cariad
 XBSC-Subgroup: Drivers
 XBSC-Subsubgroup: TFT
-Depends: libdisplaycore-core, libdisplaycore-driver-analogtouch
+Depends: libcariad-core, libcariad-driver-analogtouch
 Provides: Picadillo.h
 Description: Picadillo-35T
- The DisplayCore driver for the Picadillo-35T board
+ The Cariad driver for the Picadillo-35T board
 
 
 

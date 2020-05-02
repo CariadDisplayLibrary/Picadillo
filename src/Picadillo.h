@@ -3,10 +3,10 @@
 
 #ifdef _BOARD_PICADILLO_35T_
 
-#include <DisplayCore.h>
+#include <Cariad.h>
 #include <AnalogTouch.h>
 
-class Picadillo : public DisplayCore
+class Picadillo : public Cariad
 {
     private:
         static const uint8_t HX8357_EXIT_SLEEP_MODE            = 0x11;
@@ -79,7 +79,7 @@ class Picadillo : public DisplayCore
         static const int Height     = 480;
 
 
-		Picadillo() : DisplayCore(), _brightness(255) {}
+		Picadillo() : Cariad(), _brightness(255) {}
 
 		void setAddrWindow(int x0, int y0, int x1, int y1);
 		void setAddrWindowRead(int x0, int y0, int x1, int y1);
