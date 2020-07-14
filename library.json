@@ -1,1 +1,26 @@
-{"name":"Picadillo","keywords":"display, cariad, tft, lcd, glcd, oled, graphics, font","description":"Picadillo for Cariad","homepage":"http:\/\/cariad.org\/wiki\/index.php?title=Acorn","repository":{"type":"git","url":"https:\/\/github.com\/Cariad\/Picadillo.git"},"dependencies":[{"name":"Cariad","version":"2.1.0"}],"export":{"exclude":"debian"},"authors":{"name":"Majenko Technologies","url":"http:\/\/majenko.co.uk"},"version":"2.1.0","frameworks":"arduino","platforms":"microchippic32"}
+{
+    "name": "Picadillo",
+    "keywords": "display, cariad, tft, lcd, glcd, oled, graphics, font",
+    "description": "Picadillo for Cariad",
+    "homepage": "https:\/\/github.com\/CariadDisplayLibrary\/Picadillo",
+    "repository": {
+        "type": "git",
+        "url": "https:\/\/github.com\/CariadDisplayLibrary\/Picadillo"
+    },
+    "dependencies": [
+        {
+            "name": "Cariad",
+            "version": "2.1.0"
+        }
+    ],
+    "export": {
+        "exclude": "debian"
+    },
+    "authors": {
+        "name": "Majenko Technologies",
+        "url": "http:\/\/majenko.co.uk"
+    },
+    "version": "2.1.3",
+    "frameworks": "arduino",
+    "platforms": "microchippic32"
+}
